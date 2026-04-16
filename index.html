@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midterm Project | E-Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">E-Portfolio.</div>
+        <ul class="nav-links">
+            <li><a href="#" onclick="showSection('home')" id="nav-home" class="active">Home</a></li>
+            <li><a href="#" onclick="showSection('midterm')" id="nav-midterm">Midterm</a></li>
+            <li><a href="#" onclick="showSection('final')" id="nav-final">Final</a></li>
+            <li><a href="#" onclick="showSection('contact')" id="nav-contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="content-section active">
+        <div class="hero">
+            <h1>Mao Miguel V. Arcebuche</h1>
+            <h2>Object-Oriented Programming</h2>
+            <p class="subtitle">BSIT | Polytechnic University of the Philippines (PUP) Sta. Mesa</p>
+            
+            <div class="intro-box">
+                <h3>Introduction</h3>
+                <p>This e-portfolio presents my Midterm Project in Object-Oriented Programming. It includes quizzes, activities, and exams that demonstrate my understanding of core OOP concepts, Java syntax, and logical problem-solving. Feel free to explore my source codes and reflections below.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="midterm" class="content-section">
+        
+        <h2 class="collection-title">Midterm Quizzes</h2>
+        <div class="portfolio-grid">
+            <div class="card">
+                <h3>Quiz 1</h3>
+                <img src="images/Q1.png" alt="Quiz 1" class="portfolio-img">
+                <div class="card-content">
+                    <p><strong>Topic:</strong> Foundations & Syntax</p>
+                    <p><em>Reflection:</em> This initial assessment tested our foundational understanding of setting up Java environments, standard coding conventions, and basic programming logic.</p>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Quiz 2</h3>
+                <img src="images/Q2.png" alt="Quiz 2" class="portfolio-img">
+                <div class="card-content">
+                    <p><strong>Topic:</strong> Input/Output Classes</p>
+                    <p><em>Reflection:</em> This quiz focused heavily on Java's utility classes. It required an understanding of how to efficiently read user input using <code>BufferedReader</code> and <code>Scanner</code>, and selecting the appropriate methods like <code>readLine()</code> for string processing.</p>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="collection-title">Midterm Seat Works</h2>
+        <div class="portfolio-grid">
+            <div class="card">
+                <h3>Seatwork 1</h3>
+                <img src="images/SW1.png" alt="Seatwork 1" class="portfolio-img">
+                <div class="card-content">
+                    <p><strong>Topic:</strong> Introductory Coding Exercises</p>
+                    <p><em>Reflection:</em> Practical applications of declaring primitive data types, outputting text to the console, and ensuring correct compilation procedures.</p>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Seatwork 2</h3>
+                <img src="images/SW2.png" alt="Seatwork 2" class="portfolio-img">
+                <div class="card-content">
+                    <p><strong>Topic:</strong> Basic Operations</p>
+                    <p><em>Reflection:</em> Focused on building simple operational logic, string concatenation, and ensuring basic arithmetic operations were correctly structured within the main method.</p>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Seatwork 3: Grade Evaluator</h3>
+                <img src="images/SW3.png" alt="Seatwork 3 Output" class="portfolio-img">
+                <div class="card-content">
+                    <p><strong>Explanation:</strong> This program computes a student's average and assigns a remark. I utilized <code>do-while</code> loops to validate that the grade inputs strictly fall between 0 and 100.</p>
+                    <p><em>Learnings:</em> Separating logic into modular methods (<code>computeAverage</code> and <code>determineRemark</code>) makes the <code>main</code> method much cleaner and easier to read.</p>
+<div class="code-container">
+<pre><code>package oop;
+import java.util.Scanner;
+
+public class StudentGradeEvaluatorArcebuche {
+
+    public static double computeAverage(double p, double m, double f) {
+        return (p + m + f) / 3;
+    }
+    
+    public static String determineRemark(double average) {
+        if (average &gt;= 90 &amp;&amp; average &lt;= 100) {
+            return "Excellent";
+        } else if (average &gt;= 80) {
+            return "Very Good";
+        } else if (average &gt;= 75) {
+            return "Good";
+        } else {
+            return "Failed";
+        }
+    }
+    
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double prelim, midterm, finals;
+        
+        System.out.print("Enter Student Name: ");
+        String name = input.nextLine();
+        
+        do {
+            System.out.print("Enter Prelim Grade: ");
+            prelim = input.nextDouble();
+            if (prelim &lt; 0 || prelim &gt; 100) System.out.println("Invalid grade input");
+        } while (prelim &lt; 0 || prelim &gt; 100);
+        
+        do {
+            System.out.print("Enter Midterm Grade: ");
+            midterm = input.nextDouble();
+            if (midterm &lt; 0 || midterm &gt; 100) System.out.println("Invalid grade input");
+        } while (midterm &lt; 0 || midterm &gt; 100);
+        
+        do {
+            System.out.print("Enter Final Grade: ");
+            finals = input.nextDouble();
+            if (finals &lt; 0 || finals &gt; 100) System.out.println("Invalid grade input");
+        } while (finals &lt; 0 || finals &gt; 100);
+        
+        double average = computeAverage(prelim, midterm, finals);
+        String remark = determineRemark(average);
+
+        System.out.println("\n===== STUDENT GRADE EVALUATION =====");
+        System.out.println("Student Name: " + name);
+        System.out.printf("Average Grade: %.2f%n", average);
+        System.out.println("Remark: " + remark);
+
+        input.close();
+    }
+}</code></pre>
+</div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="collection-title">Midterm Activities</h2>
+        <div class="portfolio-grid">
+            
+            <div class="card">
+                <h3>Activity 2: Operators</h3>
+                <img src="images/A2.png" alt="Activity 2 Output" class="portfolio-img">
+                <div class="card-content">
+                    <p><strong>Explanation:</strong> A deep dive into logical operators (<code>&amp;&amp;</code>, <code>||</code>) and the ternary operator (<code>? :</code>).</p>
+                    <p><em>Learnings:</em> The ternary operator is a highly efficient way to write inline conditional statements, significantly reducing the lines of code needed compared to traditional if-else blocks.</p>
+<div class="code-container">
+<pre><code>package ARAL;
+
+public class Activity2_num4 {
+    public static void main(String[] args) {
+        int a = 10;
+        int b = 20;
+        int c = 40;
+        int d = 0;
+
+        String t = "TRUE";
+        String f = "FALSE";
+        
+        System.out.println(
+            ((a &lt; b) ? f : t) + ", " +         
+            (b &gt; a ? t : f) + ", " +            
+            (a == 10 || b == 99 ? t : f) + ", " +
+            (c - d) + ", " +                          
+            (c == 40 &amp;&amp; a == 10 ? t : f) + ", " + 
+            (a &gt; b ? t : f) + ", " +            
+            (!(b &gt; a) ? t : f) + ", " +            
+            (c + c));
+    }
+}</code></pre>
+</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Activity 3 & 4: Memory Management</h3>
+                <img src="images/A3.png" alt="Variable Identification Table" class="portfolio-img">
+                <img src="images/A4.png" alt="Memory Impact Explanation" class="portfolio-img" style="border-top: none;">
+                <div class="card-content">
+                    <p><strong>Explanation:</strong> A manual analysis of how Java handles memory allocation during object instantiation.</p>
+                    <p><em>Learnings:</em> I learned to differentiate how instance variables and objects are dynamically allocated in the <strong>Heap</strong>, while local variables and object references are managed in the <strong>Stack</strong>.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Activity 5: Basic ATM System</h3>
+                <img src="images/A5.png" alt="ATM Output" class="portfolio-img">
+                <div class="card-content">
+                    <p><strong>Explanation:</strong> A simulated ATM interface allowing deposits and withdrawals with active balance tracking.</p>
+                    <p><em>Learnings:</em> Implemented a robust <code>do-while</code> loop combined with a <code>switch-case</code> statement to manage the user menu, ensuring the program only exits when the user explicitly chooses to.</p>
+<div class="code-container">
+<pre><code>package oop;
+import java.util.Scanner;
+
+public class BasicATMSystemArcebuche {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double balance = 5000.00;
+        int choice;
+
+        do {
+            System.out.println("\n===== ATM MENU =====\n");
+            System.out.println("1. Check Balance\n2. Deposit\n3. Withdraw\n4. Exit");
+            System.out.print("Choice: ");
+            choice = input.nextInt();
+            input.nextLine();
+            
+            switch(choice) {
+                case 1: 
+                    System.out.printf("Current balance: %.2f%n", balance);
+                    break;
+                case 2:
+                    System.out.print("Enter deposit amount: ");
+                    double deposit = input.nextDouble();
+                    if (deposit &gt; 0) {
+                        balance += deposit;
+                        System.out.printf("You have successfully deposited: %.2f%n", deposit);
+                    } else {
+                        System.out.println("Invalid amount. You must deposit more than 0.");
+                    }
+                    break;
+                case 3:
+                    if (balance &lt;= 0) {
+                        System.out.println("Insufficient funds.");
+                        break;
+                    } else {
+                        double withdraw; 
+                        do {
+                            System.out.print("Enter withdrawal amount (Max 2000): ");
+                            withdraw = input.nextDouble();
+                            if(withdraw &lt; 1 || withdraw &gt; 2000 || withdraw &gt; balance) {
+                                System.out.println("Invalid amount. Try again.");
+                            }
+                        } while (withdraw &lt; 1 || withdraw &gt; 2000 || withdraw &gt; balance);
+                    
+                        balance -= withdraw;
+                        System.out.printf("Withdrew: %.2f. New balance: %.2f%n", withdraw, balance);
+                    }
+                    break;         
+                case 4:
+                    System.out.println("Thank you for using the ATM!");
+                    break;
+                default:
+                    System.out.println("Invalid choice. Enter 1-4."); 
+            }
+        } while(choice != 4);
+        input.close();
+    }
+}</code></pre>
+</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Activity 6: Enrollment System</h3>
+                <img src="images/A6.png" alt="Enrollment Output" class="portfolio-img">
+                <div class="card-content">
+                    <p><strong>Explanation:</strong> An assessment tool that calculates a final evaluation score based on exams and interviews, mapping SHS strands to college programs.</p>
+                    <p><em>Learnings:</em> Gained experience in complex conditional logic using nested <code>if-else</code> structures and validating specific string inputs using the <code>.equals()</code> and <code>.equalsIgnoreCase()</code> methods.</p>
+<div class="code-container">
+<pre><code>package oop;
+import java.util.Scanner;
+
+public class EnrollmentAssessmentSystemArcebuche {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter your Name: ");
+        String name = input.nextLine(); 
+    
+        String strand; 
+        do {
+            System.out.print("Enter SHS Strand (STEM, ABM, HUMSS, TVL, Others): ");
+            strand = input.nextLine().toUpperCase();
+            if (!strand.equals("STEM") &amp;&amp; !strand.equals("ABM") &amp;&amp; !strand.equals("HUMSS") &amp;&amp; 
+                !strand.equals("TVL") &amp;&amp; !strand.equals("OTHERS")) {
+                System.out.println("Try again.");
+            } else break;
+        } while (true);
+        
+        int examScore;
+        do {
+            System.out.print("Enter Exam Score (0-100): ");
+            examScore = input.nextInt();
+        } while (examScore &lt; 0 || examScore &gt; 100);
+        
+        int interviewScore;
+        do {
+            System.out.print("Enter Interview Score (0-100): ");
+            interviewScore = input.nextInt();
+            input.nextLine();
+        } while (interviewScore &lt; 0 || interviewScore &gt; 100);
+        
+        String screeningResult;
+        do {
+            System.out.print("Enter First Screening Result (Pass/Fail): ");
+            screeningResult = input.nextLine();
+            if (!screeningResult.equalsIgnoreCase("Pass") &amp;&amp; !screeningResult.equalsIgnoreCase("Fail")) {
+                System.out.println("Try again.");
+            } else break;
+        } while (true);
+        
+        double finalScore = (examScore * 0.60) + (interviewScore * 0.40);
+        String status; 
+        
+        if (screeningResult.equalsIgnoreCase("Pass")) {
+            if(finalScore &gt;= 85) status = "Admitted with Scholarship";
+            else if (finalScore &gt;= 75) status = "Admitted";
+            else if (finalScore &gt;= 65) status = "Waitlisted";
+            else status = "Not Qualified";
+        } else {
+            status = "Not Qualified";
+        }
+        
+        String program; 
+        switch (strand.toUpperCase()) { 
+            case "STEM": program = "BSIT / BSCS"; break;
+            case "ABM": program = "BSBA"; break;
+            case "HUMSS": program = "BSED / AB Communication"; break;
+            case "TVL": program = "BSIT"; break;
+            default: program = "General Program"; break;
+        }    
+        
+        System.out.println("\n===== ENROLLMENT ASSESSMENT RESULT =====");
+        System.out.println("Student Name: " + name);
+        System.out.println("SHS Strand: " + strand);
+        System.out.printf("Final Evaluation Score: %.2f%n", finalScore);
+        System.out.println("Admission Result: " + status);
+        System.out.println("Recommended Program: " + program);
+        input.close();
+    }
+}</code></pre>
+</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Activity 7 & 8: Expense Tracker</h3>
+                <img src="images/A7.png" alt="Expense Tracker Output 1" class="portfolio-img">
+                <img src="images/A8.png" alt="Expense Tracker Output 2" class="portfolio-img" style="border-top: none;">
+                <div class="card-content">
+                    <p><strong>Explanation:</strong> A comprehensive financial tracker that accepts budgets and categorized expenses, calculating the remainder and warning the user if they exceed their limit.</p>
+                    <p><em>Reflection:</em> This project perfectly demonstrated the power of creating modular custom methods (like <code>calculateTotalExpense</code> and <code>getValidValue</code>). It prevented me from writing redundant code and made the <code>switch-case</code> execution highly readable.</p>
+<div class="code-container">
+<pre><code>package oop;
+import java.util.Scanner;
+
+public class ExpenseTrackerArcebuche {
+
+    public static void displayProgramTitle() {
+        System.out.println("===============================");
+        System.out.println("Welcome to the Expense Tracker!");
+        System.out.println("===============================");
+    }
+    
+    public static double calculateTotalExpense(double food, double transpo, double others) {
+        return food+transpo+others;
+    }
+    
+    public static String checkBudget(double expense, double budget) {
+        if (expense &gt; budget) return "Exceeds your total budget";
+        else return "Within your total budget";
+    }
+    
+    public static void displayTotalExpenseAndBudget(double expense, double budget, String status) {
+        System.out.println("Your total expenses are: " + expense); 
+        System.out.println("Your remaining budget is: " + budget);
+        System.out.println("Your budget status is: " + status);
+    }
+
+    public static double getValidValue(Scanner input, String enter) {
+        double value;
+        do {
+            System.out.print(enter);
+            value = input.nextDouble();
+            if (value &lt; 0) System.out.println("You cannot enter negative values.");
+        } while (value &lt; 0);
+        return value;
+    }
+    
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int choice;
+        double budget = 0, food = 0, transportation = 0, other_expenses = 0;
+        double total_expenses, remaining_budget;
+        String budget_status;
+        
+        do {
+            displayProgramTitle();
+            System.out.println("1. Enter your budget\n2. List your expenses");
+            System.out.println("3. Check your expenses and budget status\n4. Exit");
+            System.out.print("\nEnter your desired action: ");
+            choice = input.nextInt();
+            
+            if (choice &lt; 1 || choice &gt; 4) {
+                System.out.println("Invalid choice. Please try again\n");
+                continue;
+            }
+            
+            switch (choice) {
+                case 1:
+                    budget += getValidValue(input, "Enter your total budget: ");
+                    System.out.println("");
+                    break;
+                case 2: 
+                    food += getValidValue(input, "Enter your food expenses: ");
+                    transportation += getValidValue(input, "Enter your transportation expenses: ");
+                    other_expenses += getValidValue(input, "Enter your other expenses: ");    
+                    System.out.println("");
+                    break;
+                case 3:
+                    System.out.println("\n------------------------------------------------");
+                    total_expenses = calculateTotalExpense(food, transportation, other_expenses);
+                    budget_status = checkBudget(total_expenses, budget);
+                    remaining_budget = budget - total_expenses;
+                    displayTotalExpenseAndBudget(total_expenses, remaining_budget, budget_status);
+                    System.out.println("------------------------------------------------\n");
+                    break;
+                case 4:
+                    System.out.println("Exiting Program. Thank you!");
+                    break;
+            }
+        } while(choice != 4);
+        input.close();
+    }
+}</code></pre>
+</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="final" class="content-section">
+        <div class="empty-state">
+            <h2>Finals Portfolio</h2>
+            <p>Work in progress. Check back at the end of the semester!</p>
+        </div>
+    </section>
+
+    <section id="contact" class="content-section">
+        <h2>Contact Information</h2>
+        <div class="contact-box">
+            <p>Feel free to reach out for collaborations or inquiries regarding my code.</p>
+            <ul>
+                <li><strong>Email:</strong> your.email@example.com</li>
+                <li><strong>GitHub:</strong> github.com/yourusername</li>
+            </ul>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
