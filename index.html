@@ -296,7 +296,7 @@ public class EnrollmentAssessmentSystemArcebuche {
             </div>
 
             <div class="card">
-                <h3>Activity 7 & 8: Expense Tracker</h3>
+                <h3>Activity 7: Expense Tracker</h3>
                 <img src="images/A7.png" alt="Expense Output 1" class="portfolio-img" onclick="openModal(this.src)">
                 <img src="images/A8.png" alt="Expense Output 2" class="portfolio-img" style="border-top: none;" onclick="openModal(this.src)">
                 <div class="card-content">
@@ -306,24 +306,98 @@ public class EnrollmentAssessmentSystemArcebuche {
 import java.util.Scanner;
 
 public class ExpenseTrackerArcebuche {
+
+    public static void displayProgramTitle() {
+        System.out.println("===============================");
+        System.out.println("Welcome to the Expense Tracker!");
+        System.out.println("===============================");
+    }
+
+    public static double calculateTotalExpense(double food, double transpo, double others) {
+        return food+transpo+others;
+    }
+
+    public static String checkBudget(double expense, double budget) {
+        if (expense &gt; budget) {
+            return "Exceeds your total budget";
+        } else {
+            return "Within your total budget";
+        }
+    }
+
+    public static void displayTotalExpenseAndBudget(double expense, double budget, String budget_status) {
+        System.out.println("Your total expenses are: " + expense);
+        System.out.println("Your remaining budget is: " + budget);
+        System.out.println("Your budget status is: " + budget_status);
+    }
+
+    public static double getValidValue(Scanner input, String enter) {
+        double value;
+        do {
+            System.out.print(enter);
+            value = input.nextDouble();
+            if (value &lt; 0) System.out.println("You cannot enter negative values.");
+        } while (value &lt; 0);
+        return value;
+    }
+
     public static void main(String[] args) {
+        //prep
         Scanner input = new Scanner(System.in);
-        // ... variable declarations ...
+        int choice;
+        double budget = 0;
+        double food = 0;
+        double transportation = 0;
+        double other_expenses = 0;
+        double amount;
+        double total_expenses;
+        double remaining_budget;
+        String budget_status;
         
         do {
             displayProgramTitle();
-            // ... menu ...
+            System.out.println("1. Enter your budget");
+            System.out.println("2. List your expenses");
+            System.out.println("3. Check your expenses and budget status");
+            System.out.println("4. Exit Expense Tracker");
+            System.out.print("\nEnter your desired action: ");
             choice = input.nextInt();
-            // ... switch case handling budget/expenses ...
+            
+            if (choice &lt; 1 || choice &gt; 4) {
+                System.out.println("Invalid choice. Please try again\n");
+                continue;
+            }
+            
+            switch (choice) {
+                case 1:
+                    budget += getValidValue(input, "Enter your total budget: ");
+                    System.out.println("");
+                    break;
+                case 2:
+                    food += getValidValue(input, "Enter your food expenses: ");
+                    transportation += getValidValue(input, "Enter your transportation expenses: ");
+                    other_expenses += getValidValue(input, "Enter your other expenses: ");
+                    System.out.println("");
+                    break;
+                case 3:
+                    System.out.println("\n------------------------------------------------");
+                    total_expenses = calculateTotalExpense(food, transportation, other_expenses);
+                    budget_status = checkBudget(total_expenses, budget);
+                    remaining_budget = budget - total_expenses;
+                    displayTotalExpenseAndBudget(total_expenses, remaining_budget, budget_status);
+                    System.out.println("------------------------------------------------\n");
+                    break;
+                case 4:
+                    System.out.println("Exiting Program. Thank you for using the Expense Tracker!");
+                    break;
+            }
         } while(choice != 4);
         input.close();
     }
-    // ... custom methods definition ...
 }</code></pre>
 </div>
                 </div>
             </div>
-        </div>
 
         <h2 class="collection-title">Midterm Exam</h2>
         <div class="portfolio-grid">
