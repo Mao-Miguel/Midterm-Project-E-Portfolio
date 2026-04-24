@@ -38,7 +38,7 @@ nav {
 .logo {
     font-size: 1.5rem;
     font-weight: 800;
-    color: var(--card-bg); /* White logo for contrast */
+    color: var(--pup-gold); /* Changed from white to Gold */
 }
 
 .nav-links {
