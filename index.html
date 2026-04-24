@@ -415,28 +415,44 @@ public class ExpenseTrackerArcebuche {
                     <p><strong>Reflection:</strong> This exam challenged me to combine logical problem-solving with the foundational programming structures learned so far, specifically how to design methods that handle input parameters and return crucial results like averages and remarks based on specific logical conditions.</p>
                     
                     <div class="code-container">
-<pre><code>/**
- * User-defined method to calculate average.
- * Takes in 3 double variables, and returns the calculated average.
- */
-public static double solveAverage(double prelim, double midterm, double finalGrade) {
-    return (prelim + midterm + finalGrade) / 3.0;
-}
+<pre><code>import java.util.Scanner;
 
-/**
- * User-defined method to give a remark based on average.
- * @param average The student's average grade.
- * @return String remark ("Excellent", "Great", "Fair", or "Failed")
- */
-public static String giveRemark(double average) {
-    if (average &gt;= 90 &amp;&amp; average &lt;= 100) {
-        return "Excellent";
-    } else if (average &gt;= 80 &amp;&amp; average &lt;= 89) {
-        return "Great";
-    } else if (average &gt;= 75 &amp;&amp; average &lt;= 79) {
-        return "Fair";
-    } else {
-        return "Failed";
+public class Main {
+    
+    public static double computeAverage(double p, double m, double f) {
+        return (p + m + f) / 3.0;
+    }
+
+    public static String giveRemark(double average) {
+        if (average &gt;= 90 &amp;&amp; average &lt;= 100) {
+            return "Excellent";
+        } else if (average &gt;= 80 &amp;&amp; average &lt;= 89) {
+            return "Good";
+        } else if (average &gt;= 75 &amp;&amp; average &lt;= 79) {
+            return "Fair";
+        } else {
+            return "Failed";
+        }
+    }
+    
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter first grade: ");
+        double prelim = scanner.nextDouble();
+
+        System.out.print("Enter second grade: ");
+        double midterm = scanner.nextDouble();
+
+        System.out.print("Enter third grade: ");
+        double finals = scanner.nextDouble();
+
+        double average = computeAverage(prelim, midterm, finals);
+
+        System.out.println("Average: " + average);
+        System.out.println("Remark: " + giveRemark(average));
+
+        scanner.close();
     }
 }</code></pre>
                     </div>
