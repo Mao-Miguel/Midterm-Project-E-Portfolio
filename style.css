@@ -272,13 +272,80 @@ nav {
     background: #64748b; 
 }
 
-/* Empty State / Contact */
-.empty-state, .contact-box {
-    text-align: center;
-    padding: 4rem 2rem;
+/* --- CONTACT SECTION UPGRADE --- */
+.contact-card {
     background: var(--card-bg);
     border-radius: 12px;
-    border: 2px dashed #cbd5e1;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* Soft drop shadow */
+    padding: 4rem 2rem;
+    text-align: center;
+    max-width: 800px;
+    margin: 2rem auto;
+    border-top: 6px solid var(--pup-maroon); /* PUP Accent line */
+}
+
+.contact-header h3 {
+    font-size: 2rem;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+}
+
+.contact-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap; /* Allows buttons to stack on small phone screens */
+}
+
+/* Base style for the new contact buttons */
+.contact-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    border-radius: 50px; /* Makes them look like modern 'pill' buttons */
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.contact-btn svg {
+    fill: currentColor; /* Matches icon color to text color automatically */
+}
+
+/* Specific styling for Email button */
+.email-btn {
+    background-color: #f1f5f9;
+    color: var(--text-main);
+    border: 2px solid transparent;
+}
+
+.email-btn:hover {
+    background-color: #e2e8f0;
+    transform: translateY(-4px); /* Moves up slightly on hover */
+    box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+}
+
+/* Specific styling for GitHub button */
+.github-btn {
+    background-color: #0f172a; /* Dark sleek background */
+    color: #ffffff;
+    border: 2px solid transparent;
+}
+
+.github-btn:hover {
+    background-color: #1e293b;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(15, 23, 42, 0.2);
 }
 
 .contact-box {
