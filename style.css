@@ -56,9 +56,18 @@ nav {
 }
 
 /* Yellow/Gold Buttons/Hover - High Contrast */
-.nav-links a:hover, .nav-links a.active {
-    color: var(--pup-gold); /* Yellow text on hover/active */
+.nav-links a:hover {
+    color: var(--pup-gold); /* Yellow text on hover */
     transform: translateY(-2px);
+}
+
+/* Active Page Indicator (Underline) */
+.nav-links a.active {
+    color: var(--pup-gold);
+    text-decoration: underline;
+    text-decoration-color: var(--pup-gold);
+    text-underline-offset: 6px; /* Pushes the line down so it looks clean */
+    text-decoration-thickness: 3px; /* Makes the underline bold */
 }
 
 /* General Buttons (Home/Exam) */
@@ -168,6 +177,19 @@ nav {
     border-bottom: 1px solid #e2e8f0;
 }
 
+/* Questions / Scores Title Divider */
+.sub-section-title {
+    background: #f1f5f9;
+    padding: 0.5rem 1.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--pup-maroon);
+    border-bottom: 1px solid #e2e8f0;
+    border-top: 1px solid #e2e8f0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
 /* Clickable Images CSS */
 .portfolio-img {
     width: 100%;
@@ -175,7 +197,7 @@ nav {
     object-fit: cover;
     object-position: top;
     border-bottom: 1px solid #e2e8f0;
-    cursor: pointer; /* Tells user it's clickable */
+    cursor: zoom-in; /* Changes the mouse to a magnifying glass */
     transition: opacity 0.3s;
 }
 

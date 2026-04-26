@@ -40,18 +40,31 @@
         <div class="portfolio-grid">
             <div class="card">
                 <h3>Quiz 1</h3>
-                <img src="images/Q1.png" alt="Quiz 1" class="portfolio-img" onclick="openModal(this.src)">
+                <div class="sub-section-title">Questions</div>
+                <img src="images/Q1Q.jpg" alt="Quiz 1 Questions" class="portfolio-img" onclick="openModal(this.src)" title="Click to view more">
+                
+                <div class="sub-section-title">Scores</div>
+                <img src="images/Q1.png" alt="Quiz 1 Scores" class="portfolio-img" onclick="openModal(this.src)" title="Click to view more">
+                
                 <div class="card-content">
                     <p><strong>Topic:</strong> Lessons 1 - 3 (Introduction to Java, Program Structure, and Operators)</p>
-                    <p><em>Reflection:</em> This initial assessment tested our foundational understanding of setting up Java environments, standard coding conventions, and basic programming logic.</p>
+                    <p><em>Explanation:</em> This initial assessment tested our foundational understanding of setting up Java environments, standard coding conventions, and basic programming logic.</p>
                 </div>
             </div>
+            
             <div class="card">
                 <h3>Quiz 2</h3>
-                <img src="images/Q2.png" alt="Quiz 2" class="portfolio-img" onclick="openModal(this.src)">
+                <div class="sub-section-title">Questions</div>
+                <img src="images/Q2Q1.png" alt="Quiz 2 Q1" class="portfolio-img" onclick="openModal(this.src)" title="Click to view more">
+                <img src="images/Q2Q2.png" alt="Quiz 2 Q2" class="portfolio-img" style="border-top: none;" onclick="openModal(this.src)" title="Click to view more">
+                <img src="images/Q2Q3.png" alt="Quiz 2 Q3" class="portfolio-img" style="border-top: none;" onclick="openModal(this.src)" title="Click to view more">
+                
+                <div class="sub-section-title">Scores</div>
+                <img src="images/Q2.png" alt="Quiz 2 Scores" class="portfolio-img" onclick="openModal(this.src)" title="Click to view more">
+                
                 <div class="card-content">
                     <p><strong>Topic:</strong> Lessons 4 - 6 (Java Operators, Control Structures, Methods, and Arrays)</p>
-                    <p><em>Reflection:</em> This quiz focused heavily on Java's utility classes. It required an understanding of how to efficiently read user input using <code>BufferedReader</code> and <code>Scanner</code>, and selecting the appropriate methods for string processing.</p>
+                    <p><em>Explanation:</em> This quiz focused heavily on Java's utility classes. It required an understanding of how to efficiently read user input using <code>BufferedReader</code> and <code>Scanner</code>, and selecting the appropriate methods for string processing.</p>
                 </div>
             </div>
         </div>
@@ -60,23 +73,35 @@
         <div class="portfolio-grid">
             <div class="card">
                 <h3>Seatwork 1</h3>
-                <img src="images/SW1.png" alt="Seatwork 1" class="portfolio-img" onclick="openModal(this.src)">
+                <div class="sub-section-title">Questions</div>
+                <img src="images/S1Q.png" alt="Seatwork 1 Questions" class="portfolio-img" onclick="openModal(this.src)" title="Click to view more">
+                
+                <div class="sub-section-title">Scores</div>
+                <img src="images/SW1.png" alt="Seatwork 1 Scores" class="portfolio-img" onclick="openModal(this.src)" title="Click to view more">
+                
                 <div class="card-content">
                     <p><strong>Topic:</strong> Java Operators</p>
-                    <p><em>Reflection:</em> For this seatwork, we had to manually track the code to determine if it would print true or false, and logically solve for the final values of the variables.</p>
+                    <p><em>Explanation:</em> For this seatwork, we had to manually track the code to determine if it would print true or false, and logically solve for the final values of the variables.</p>
                 </div>
             </div>
+            
             <div class="card">
                 <h3>Seatwork 2</h3>
-                <img src="images/SW2.png" alt="Seatwork 2" class="portfolio-img" onclick="openModal(this.src)">
+                <div class="sub-section-title">Questions</div>
+                <img src="images/S2Q.jpg" alt="Seatwork 2 Questions" class="portfolio-img" onclick="openModal(this.src)" title="Click to view more">
+                
+                <div class="sub-section-title">Scores</div>
+                <img src="images/SW2.png" alt="Seatwork 2 Scores" class="portfolio-img" onclick="openModal(this.src)" title="Click to view more">
+                
                 <div class="card-content">
                     <p><strong>Topic:</strong> User Input</p>
-                    <p><em>Reflection:</em> This covered <code>BufferedReader</code>, <code>Scanner</code>, and Console. We mainly focused on the Scanner class for this activity and were challenged to finish the program in only 30 minutes.</p>
+                    <p><em>Explanation:</em> This covered <code>BufferedReader</code>, <code>Scanner</code>, and Console. We mainly focused on the Scanner class for this activity and were challenged to finish the program in only 30 minutes.</p>
                 </div>
             </div>
+            
             <div class="card">
                 <h3>Seatwork 3: Grade Evaluator</h3>
-                <img src="images/SW3.png" alt="Seatwork 3 Output" class="portfolio-img" onclick="openModal(this.src)">
+                <img src="images/SW3.png" alt="Seatwork 3 Output" class="portfolio-img" onclick="openModal(this.src)" title="Click to view more">
                 <div class="card-content">
                     <p><strong>Explanation:</strong> Program to compute average and remark. Utilized methods for modularity.</p>
                     <p><em>Learnings:</em> Separating logic into modular methods (<code>computeAverage</code>) makes the code reusable and clean.</p>
@@ -147,7 +172,7 @@ public class StudentGradeEvaluatorArcebuche {
             
             <div class="card">
                 <h3>Activity 1: Operators</h3>
-                <img src="images/A2.png" alt="Activity 1 Output" class="portfolio-img" onclick="openModal(this.src)">
+                <img src="images/A2.png" alt="Activity 1 Output" class="portfolio-img" onclick="openModal(this.src)" title="Click to view more">
                 <div class="card-content">
                     <p><strong>Explanation:</strong> Review of logical and ternary operators.</p>
                     <p><em>Learnings:</em> Mastered evaluating complex boolean expressions and utilizing ternary operators to write more concise conditional logic.</p>
@@ -176,8 +201,8 @@ public class Activity2_num4 {
 
             <div class="card">
                 <h3>Activity 2: Memory Management</h3>
-                <img src="images/A3.png" alt="Memory Allocation Table" class="portfolio-img" onclick="openModal(this.src)">
-                <img src="images/A4.png" alt="Heap and Stack Explanation" class="portfolio-img" style="border-top: none;" onclick="openModal(this.src)">
+                <img src="images/A3.png" alt="Memory Allocation Table" class="portfolio-img" onclick="openModal(this.src)" title="Click to view more">
+                <img src="images/A4.png" alt="Heap and Stack Explanation" class="portfolio-img" style="border-top: none;" onclick="openModal(this.src)" title="Click to view more">
                 <div class="card-content">
                     <p><strong>Explanation:</strong> Analyzed Heap vs Stack allocation in Java.</p>
                     <p><em>Learnings:</em> Gained a clear understanding of how Java manages memory, specifically how objects are stored dynamically in the Heap while reference variables reside in the Stack.</p>
@@ -186,7 +211,7 @@ public class Activity2_num4 {
 
             <div class="card">
                 <h3>Activity 3: Basic ATM System</h3>
-                <img src="images/A5.png" alt="ATM System Output" class="portfolio-img" onclick="openModal(this.src)">
+                <img src="images/A5.png" alt="ATM System Output" class="portfolio-img" onclick="openModal(this.src)" title="Click to view more">
                 <div class="card-content">
                     <p><strong>Explanation:</strong> Simulated ATM interface using logic loops.</p>
                     <p><em>Learnings:</em> Learned to implement robust <code>do-while</code> loops paired with <code>switch</code> statements to create an interactive, continuous user menu.</p>
@@ -248,7 +273,7 @@ public class BasicATMSystemArcebuche {
 
             <div class="card">
                 <h3>Activity 4: Enrollment System</h3>
-                <img src="images/A6.png" alt="Enrollment Output" class="portfolio-img" onclick="openModal(this.src)">
+                <img src="images/A6.png" alt="Enrollment Output" class="portfolio-img" onclick="openModal(this.src)" title="Click to view more">
                 <div class="card-content">
                     <p><strong>Explanation:</strong> Admissions logic based on strand and scores.</p>
                     <p><em>Learnings:</em> Improved logical structuring by using nested <code>if-else</code> conditions and I added the <code>.equalsIgnoreCase()</code> method to validate the strings inputted by the user.</p>
@@ -301,8 +326,8 @@ public class EnrollmentAssessmentSystemArcebuche {
 
             <div class="card">
                 <h3>Activity 5: Expense Tracker</h3>
-                <img src="images/A7.png" alt="Expense Output 1" class="portfolio-img" onclick="openModal(this.src)">
-                <img src="images/A8.png" alt="Expense Output 2" class="portfolio-img" style="border-top: none;" onclick="openModal(this.src)">
+                <img src="images/A7.png" alt="Expense Output 1" class="portfolio-img" onclick="openModal(this.src)" title="Click to view more">
+                <img src="images/A8.png" alt="Expense Output 2" class="portfolio-img" style="border-top: none;" onclick="openModal(this.src)" title="Click to view more">
                 <div class="card-content">
                     <p><strong>Explanation:</strong> Comprehensive budgeting tool using custom methods.</p>
                     <p><em>Learnings:</em> Realized the efficiency of modular programming by building custom methods to handle mathematical calculations and repetitive validations, keeping the main method clean.</p>
@@ -409,7 +434,7 @@ public class ExpenseTrackerArcebuche {
         <div class="portfolio-grid">
             <div class="card">
                 <h3>Exam Summary & Methods</h3>
-                <img src="images/exam.png" alt="Midterm Exam Code/Reflection" class="portfolio-img" onclick="openModal(this.src)">
+                <img src="images/exam.png" alt="Midterm Exam Code/Reflection" class="portfolio-img" onclick="openModal(this.src)" title="Click to view more">
                 <div class="card-content">
                     <p><strong>Summary:</strong> The Midterm Exam provided a thorough assessment of my OOP knowledge. It covered the history and syntax of Java, various operators, processing user input via the Scanner class, and implementing custom, user-defined methods.</p>
                     <p><strong>Reflection:</strong> This exam challenged me to combine logical problem-solving with the foundational programming structures learned so far, specifically how to design methods that handle input parameters and return crucial results like averages and remarks based on specific logical conditions.</p>
