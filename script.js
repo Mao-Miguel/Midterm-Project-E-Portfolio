@@ -22,29 +22,47 @@ function showSection(sectionId) {
     window.scrollTo(0, 0);
 }
 
-// IMAGE ZOOM MODAL LOGIC (New feature)
+// IMAGE ZOOM MODAL LOGIC 
 
-// Get the modal (the container)
 var modal = document.getElementById("myModal");
-
-// Get the image inside the modal
 var modalImg = document.getElementById("img01");
 
-// Function that runs when any portfolio image is clicked
-// It takes the image source (src) of the clicked image
 function openModal(imgSrc) {
-  modal.style.display = "block"; // Show the modal window
-  modalImg.src = imgSrc; // Set the large modal image to match the clicked image
+  modal.style.display = "block"; 
+  modalImg.src = imgSrc; 
 }
 
-// Function to close the modal
 function closeModal() {
-  modal.style.display = "none"; // Hide the modal window
+  modal.style.display = "none"; 
 }
 
-// Also close the modal if the user clicks anywhere outside the zoomed image
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
+}
+
+// ACCORDION (DROPDOWN) LOGIC
+var acc = document.getElementsByClassName("accordion-btn");
+for (var i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    // Toggle the active class for styling
+    this.classList.toggle("active-accordion");
+    
+    // Toggle the +/- icon
+    var icon = this.querySelector('.icon');
+    if (icon.innerHTML === '+') {
+        icon.innerHTML = '-';
+    } else {
+        icon.innerHTML = '+';
+    }
+
+    // Toggle the display of the actual portfolio grid content
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
 }

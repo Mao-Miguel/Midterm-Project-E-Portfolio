@@ -28,7 +28,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 5%;
-    background-color: var(--pup-maroon); /* Maroon Background */
+    background-color: var(--pup-maroon); 
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     position: sticky;
     top: 0;
@@ -38,7 +38,7 @@ nav {
 .logo {
     font-size: 1.5rem;
     font-weight: 800;
-    color: var(--pup-gold); /* Changed from white to Gold */
+    color: var(--pup-gold); 
 }
 
 .nav-links {
@@ -49,34 +49,32 @@ nav {
 
 .nav-links a {
     text-decoration: none;
-    color: var(--card-bg); /* White text links */
+    color: var(--card-bg); 
     font-weight: 600;
     transition: color 0.3s, transform 0.2s;
     display: inline-block;
 }
 
-/* Yellow/Gold Buttons/Hover - High Contrast */
 .nav-links a:hover {
-    color: var(--pup-gold); /* Yellow text on hover */
+    color: var(--pup-gold); 
     transform: translateY(-2px);
 }
 
-/* Active Page Indicator (Underline) */
 .nav-links a.active {
     color: var(--pup-gold);
     text-decoration: underline;
     text-decoration-color: var(--pup-gold);
-    text-underline-offset: 6px; /* Pushes the line down so it looks clean */
-    text-decoration-thickness: 3px; /* Makes the underline bold */
+    text-underline-offset: 6px; 
+    text-decoration-thickness: 3px; 
 }
 
-/* General Buttons (Home/Exam) */
+/* General Buttons */
 .btn {
     display: inline-block;
     margin-top: 1rem;
     padding: 0.75rem 1.5rem;
     background: var(--pup-maroon);
-    color: var(--pup-gold); /* High contrast button text */
+    color: var(--pup-gold); 
     text-decoration: none;
     border-radius: 8px;
     font-weight: 600;
@@ -121,7 +119,7 @@ nav {
 
 .hero h2 {
     font-size: 1.8rem;
-    color: var(--pup-maroon); /* Maroon subtitle header */
+    color: var(--pup-maroon); 
     margin-bottom: 0.5rem;
 }
 
@@ -137,30 +135,54 @@ nav {
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     max-width: 800px;
-    margin: 0 auto 2rem auto; /* Bottom margin for the new button */
+    margin: 0 auto 2rem auto; 
     text-align: left;
 }
 
-/* Collection Titles */
-.collection-title {
-    margin-top: 4rem;
-    margin-bottom: 1.5rem;
-    font-size: 1.8rem;
+/* --- ACCORDION (DROPDOWN) STYLES --- */
+.accordion-btn {
+    background-color: var(--card-bg);
     color: var(--pup-maroon);
-    border-bottom: 2px solid #e2e8f0;
-    padding-bottom: 0.5rem;
+    cursor: pointer;
+    padding: 1.5rem 2rem;
+    width: 100%;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    text-align: left;
+    outline: none;
+    font-size: 1.5rem;
+    font-weight: 800;
+    transition: 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
-/* Modified rule in style.css */
-.portfolio-img {
-    width: 100%;
-    height: 250px;
-    object-fit: contain; /* Changed from cover to contain to show full image */
-    background-color: #f1f5f9; /* Added background to fill empty space professionally */
-    /* object-position: top; */ /* This is no longer needed with contain */
-    border-bottom: 1px solid #e2e8f0;
-    cursor: zoom-in;
-    transition: opacity 0.3s;
+.accordion-btn:hover, .accordion-btn.active-accordion {
+    background-color: var(--pup-maroon);
+    color: var(--pup-gold);
+    border-color: var(--pup-maroon);
+}
+
+.icon {
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+/* Hidden by default, toggled by JS */
+.accordion-content {
+    padding: 2rem 0;
+    display: none; 
+    animation: fadeIn 0.4s ease;
+}
+
+/* Midterm Grid */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
 }
 
 .card {
@@ -199,16 +221,16 @@ nav {
 .portfolio-img {
     width: 100%;
     height: 250px;
-    object-fit: contain !important; /* The !important tag forces the browser to obey this rule */
-    background-color: #f1f5f9; /* Fills the empty space cleanly */
+    object-fit: contain !important; 
+    background-color: #f1f5f9; 
     border-bottom: 1px solid #e2e8f0;
     cursor: zoom-in; 
     transition: opacity 0.3s;
-    padding: 0.5rem; /* Adds a tiny bit of breathing room around the image */
+    padding: 0.5rem; 
 }
 
 .portfolio-img:hover {
-    opacity: 0.85; /* Visual feedback on hover */
+    opacity: 0.85; 
 }
 
 .card-content {
@@ -216,7 +238,7 @@ nav {
     flex-grow: 1;
 }
 
-/* Scrollable Code Container (Dark is fine, no change needed) */
+/* Scrollable Code Container */
 .code-container {
     background-color: #1e293b; 
     color: #e2e8f0; 
@@ -272,29 +294,29 @@ nav {
     margin-top: 1rem;
 }
 
-/* IMAGE ZOOM MODAL CSS (Required for image examination) */
+/* IMAGE ZOOM MODAL CSS */
 .modal {
-    display: none; /* Hidden by default */
+    display: none; 
     position: fixed;
-    z-index: 200; /* Above nav bar */
-    padding-top: 50px; /* Space from top */
+    z-index: 200; 
+    padding-top: 50px; 
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto; /* Enable scroll if image is huge */
-    background-color: rgba(0,0,0,0.9); /* Black background with opacity */
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.9); 
 }
 
 .modal-content {
     margin: auto;
     display: block;
     width: auto;
-    max-width: 90%; /* Limits width */
-    max-height: 85vh; /* Limits height based on viewport */
-    border: 4px solid var(--pup-gold); /* Gold border for Pup theme */
+    max-width: 90%; 
+    max-height: 85vh; 
+    border: 4px solid var(--pup-gold); 
     border-radius: 8px;
-    animation: zoom 0.6s; /* Fade in animation */
+    animation: zoom 0.6s; 
 }
 
 @keyframes zoom {
@@ -302,7 +324,6 @@ nav {
     to {transform:scale(1)}
 }
 
-/* The Close Button ('X') */
 .close {
     position: absolute;
     top: 15px;
