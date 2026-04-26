@@ -151,11 +151,16 @@ nav {
     padding-bottom: 0.5rem;
 }
 
-/* Midterm Grid */
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
+/* Modified rule in style.css */
+.portfolio-img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain; /* Changed from cover to contain to show full image */
+    background-color: #f1f5f9; /* Added background to fill empty space professionally */
+    /* object-position: top; */ /* This is no longer needed with contain */
+    border-bottom: 1px solid #e2e8f0;
+    cursor: zoom-in;
+    transition: opacity 0.3s;
 }
 
 .card {
